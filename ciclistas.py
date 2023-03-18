@@ -22,6 +22,7 @@ while True:
         ciclista["codigo"] = int(input("Digita el codigo del ciclista:"))
         ciclista["nombre"] = input("Digita el nombre del ciclista:")
         ciclista["edad"] = int(input("Digita la edad del ciclista:"))
+        ciclista["pais"] = (input("Digite el pais del ciclista:"))
         ciclista["equipo"] = (input("Digite el equipo del ciclista:"))
         ciclista["tiempo"] = float(input("Digita el tiempo del ciclista:"))
 
@@ -53,6 +54,7 @@ while True:
         for ciclista in ciclistas:
             if (ciclista["codigo"] == codigo):
                 ciclistas.remove(ciclista)
+                print("Ciclista eliminado")
     elif (option == 0):
         break
     else:
