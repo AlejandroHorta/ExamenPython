@@ -1,29 +1,29 @@
-option = 1
 idCuenta = 0
 cuentas = []
-saldo = {
-    "saldo1": 1000,
-    "saldo2": 2000,
-    "saldo3": 3000,
-    "saldo4": 4000,
-    "saldo5": 5000,
-    "saldo6": 6000,
-    "saldo7": 7000,
-    "saldo8": 8000,
-    "saldo9": 9000,
-    "saldo10": 10000,
-}
+idCuenta = 0
+i = 0
 
-while True:
-    print("******Cuentas Cersei*******")
-    print("******Opción 1. = **********Ingrese una cuenta*********")
-
-    option = int(input("Escoga opción: "))
-
-    if (option == 1):
-
+while i <= 10:
+    if (i != 10):
         idCuenta += 1
+        saldo = {}
 
-        cuentas = {}
+        saldo["idCuenta"] = idCuenta
+        saldo["numeroCuenta"] = int(
+            input(f"Digita el numero de la cuenta para {saldo['idCuenta']}: "))
+        saldo["saldos"] = float(
+            input(f"Digita el saldo de la cuenta {saldo['numeroCuenta']}: "))
+        
+        cuentas.append(saldo)
 
-        cuentas["id"] = idCuenta
+        print(f"cuenta {saldo['idCuenta']} registrada ")
+
+        i += 1
+
+    elif(i >= 10 and len(cuentas) == 10):
+        for cuenta in reversed(cuentas):
+            print(f"IdCuenta: {cuenta['idCuenta']}")
+            print(f"Numero cuenta: {cuenta['numeroCuenta']}")
+            print(f"Saldo: {cuenta['saldos']}")
+            print("*****")
+        break
